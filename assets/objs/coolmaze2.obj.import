@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://3ne301k6v67n"
+path="res://.godot/imported/coolmaze2.obj-7bc29c367afdad39ece1577c2e2d071d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/coolmaze2.obj-7bc29c367afdad39ece1577c2e2d071d.mesh"]
+
+source_file="res://assets/objs/coolmaze2.obj"
+dest_files=["res://.godot/imported/coolmaze2.obj-7bc29c367afdad39ece1577c2e2d071d.mesh", "res://.godot/imported/coolmaze2.obj-7bc29c367afdad39ece1577c2e2d071d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
