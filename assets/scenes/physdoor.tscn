@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://l7km8qs58j87"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a07th"]
+size = Vector3(2, 4, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pty0k"]
+points = PackedVector3Array(-1, -2, -0.1, -1, -2, 0.1, -1, 2, -0.1, 1, -2, -0.1, 1, -2, 0.1, -1, 2, 0.1, 1, 2, -0.1, 1, 2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyce4"]
+albedo_color = Color(1, 1, 0.117647, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_krism"]
+material = SubResource("StandardMaterial3D_hyce4")
+size = Vector3(0.2, 4, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_22am4"]
+points = PackedVector3Array(-0.05, -1, -0.05, -0.05, -1, 0.05, -0.05, 1, -0.05, 0.05, -1, -0.05, 0.05, -1, 0.05, -0.05, 1, 0.05, 0.05, 1, -0.05, 0.05, 1, 0.05)
+
+[node name="Door" type="Node3D"]
+
+[node name="PhysicsDoor" type="RigidBody3D" parent="." groups=["Door"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573437, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PhysicsDoor"]
+mesh = SubResource("BoxMesh_a07th")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicsDoor"]
+shape = SubResource("ConvexPolygonShape3D_pty0k")
+
+[node name="DoorFrame" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.547683, 0, 0)
+mesh = SubResource("BoxMesh_krism")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.547683, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_22am4")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.508749, 0.148292, 0)
+node_a = NodePath("../PhysicsDoor")
+node_b = NodePath("../DoorFrame")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+angular_limit/lower = -1.91986

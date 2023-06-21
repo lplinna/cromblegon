@@ -1,0 +1,70 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://ir5o1w7c33ih"]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="1"]
+constant = Color(0.731282, 0.0980757, 0.0980757, 1)
+
+[sub_resource type="VisualShaderNodeInput" id="2"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeInput" id="3"]
+input_name = "view"
+
+[sub_resource type="VisualShaderNodeFresnel" id="4"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="5"]
+operator = 2
+
+[sub_resource type="VisualShader" id="6"]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+
+void fragment() {
+// ColorConstant:2
+	vec4 n_out2p0 = vec4(0.731282, 0.098076, 0.098076, 1.000000);
+
+
+// Input:3
+	vec3 n_out3p0 = NORMAL;
+
+
+// Input:5
+	vec3 n_out5p0 = VIEW;
+
+
+// Fresnel:6
+	float n_in6p3 = 1.00000;
+	float n_out6p0 = pow(1.0 - clamp(dot(n_out3p0, n_out5p0), 0.0, 1.0), n_in6p3);
+
+
+// VectorOp:7
+	vec3 n_out7p0 = vec3(n_out6p0) * vec3(n_out2p0.xyz);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+	METALLIC = n_out7p0.x;
+	ROUGHNESS = n_out7p0.x;
+
+
+}
+"
+graph_offset = Vector2(-77.5055, 223.1)
+nodes/fragment/0/position = Vector2(100, 260)
+nodes/fragment/2/node = SubResource("1")
+nodes/fragment/2/position = Vector2(380, 220)
+nodes/fragment/3/node = SubResource("2")
+nodes/fragment/3/position = Vector2(400, 380)
+nodes/fragment/5/node = SubResource("3")
+nodes/fragment/5/position = Vector2(400, 440)
+nodes/fragment/6/node = SubResource("4")
+nodes/fragment/6/position = Vector2(640, 400)
+nodes/fragment/7/node = SubResource("5")
+nodes/fragment/7/position = Vector2(620, 180)
+nodes/fragment/connections = PackedInt32Array(3, 0, 6, 0, 5, 0, 6, 1, 6, 0, 7, 0, 2, 0, 7, 1, 2, 0, 0, 0, 7, 0, 0, 2, 7, 0, 0, 3)
+
+[resource]
+render_priority = 0
+shader = SubResource("6")

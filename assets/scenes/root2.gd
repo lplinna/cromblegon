@@ -41,6 +41,13 @@ func _physics_process(delta):
 	#Debugline2.glyph_here(Transform($Camera.transform.basis,transform.origin - ($Camera.transform.basis.z*3) - ($Camera.transform.basis.y * 0)),int(10*self.translation.z),0,Color.green,0.2)
 	process_movement_2(delta)
 	process_input_2(delta)
+	
+	
+
+func doorInteract():
+	
+	pass
+
 
 
 func process_input_2(_delta):
@@ -121,7 +128,7 @@ func _input(event):
 		$Camera3D.transform = k
 		$Camera3D.position = $CamRoot.position
 		$SpotLight3D.transform = $Camera3D.transform
-		hold_style_3(self,$MeshInstance3D2)
+		#hold_style_3(self,$MeshInstance3D2)
 		
 
 
