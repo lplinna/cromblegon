@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bofdb8w2k0p5u"]
 
-[ext_resource type="Script" path="res://assets/scenes/root3.gd" id="1_30sva"]
+[ext_resource type="Script" path="res://assets/scripts/root3.gd" id="1_xneri"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y0wqc"]
 
@@ -12,7 +12,7 @@ size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.87655, 0)
-script = ExtResource("1_30sva")
+script = ExtResource("1_xneri")
 
 [node name="LeftHand" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.801, 0.62653, -1.285)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://lfitd4chuxh4"]
 
-[ext_resource type="Script" path="res://assets/scenes/TestEnemy.gd" id="1_ur4lu"]
+[ext_resource type="Script" path="res://assets/scripts/TestEnemy.gd" id="1_ur4lu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sg48i"]
 
