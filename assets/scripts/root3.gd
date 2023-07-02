@@ -4,11 +4,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 var dir = Vector3()
-const GRAVITY = -24.8
+const GRAVITY = -16.8
 var vel = Vector3()
 var gravdir = Vector3(0,1,0)
 const MAX_SPEED = 20
-const JUMP_SPEED = 14
+const JUMP_SPEED = 7
 const MAX_SLOPE_ANGLE = 40
 var XMULTIPLIER = 6.0
 var ZMULTIPLIER = 6.0
