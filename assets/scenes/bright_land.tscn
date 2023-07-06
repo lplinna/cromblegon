@@ -138,6 +138,14 @@ player_path = NodePath("../PlayerRB")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22143, 1.92757, 3.17644)
 player_path = NodePath("../PlayerRB")
 
-[node name="BasicEnemy" parent="." instance=ExtResource("6_oxxf6")]
+[node name="CrawlingEnemy" parent="." instance=ExtResource("6_oxxf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72494, 3.24338, -24.8905)
+player_path = NodePath("../PlayerRB")
+
+[node name="CrawlingEnemy2" parent="." instance=ExtResource("6_oxxf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30104, 3.24338, -24.8905)
+player_path = NodePath("../PlayerRB")
+
+[node name="CrawlingEnemy3" parent="." instance=ExtResource("6_oxxf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03445, 3.24338, -24.8905)
 player_path = NodePath("../PlayerRB")
