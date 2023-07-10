@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://beg7ylx2bijut"]
+[gd_scene load_steps=12 format=3 uid="uid://beg7ylx2bijut"]
 
 [ext_resource type="Material" uid="uid://1t0boix205ce" path="res://assets/materials/generic_greenblock.tres" id="1_8bkqu"]
 [ext_resource type="Material" uid="uid://ir5o1w7c33ih" path="res://assets/materials/test1.tres" id="2_q87xq"]
 [ext_resource type="PackedScene" uid="uid://l7km8qs58j87" path="res://assets/scenes/physdoor.tscn" id="3_a2tyk"]
 [ext_resource type="PackedScene" uid="uid://dxhdbv2r7npnk" path="res://player_rb.tscn" id="4_nb244"]
+[ext_resource type="PackedScene" uid="uid://b1rh0hurilxub" path="res://assets/scenes/scary_ball_1.tscn" id="5_p7u1i"]
 [ext_resource type="PackedScene" uid="uid://b1ggjfc1kooop" path="res://assets/scenes/crawling_enemy.tscn" id="6_oxxf6"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ta38s"]
@@ -109,6 +110,34 @@ shape = SubResource("ConvexPolygonShape3D_8l7a7")
 [node name="PlayerRB" parent="." instance=ExtResource("4_nb244")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16065, 2.40676, -9.32003)
 
+[node name="ScaryBall1" parent="." instance=ExtResource("5_p7u1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139852, 1.92757, 5.2523)
+player_path = NodePath("../PlayerRB")
+
+[node name="ScaryBall2" parent="." instance=ExtResource("5_p7u1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22143, 1.92757, 5.2523)
+player_path = NodePath("../PlayerRB")
+
+[node name="ScaryBall3" parent="." instance=ExtResource("5_p7u1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139852, 1.92757, 7.0402)
+player_path = NodePath("../PlayerRB")
+
+[node name="ScaryBall4" parent="." instance=ExtResource("5_p7u1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22143, 1.92757, 7.0402)
+player_path = NodePath("../PlayerRB")
+
+[node name="ScaryBall5" parent="." instance=ExtResource("5_p7u1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22143, 1.92757, 1.38854)
+player_path = NodePath("../PlayerRB")
+
+[node name="ScaryBall6" parent="." instance=ExtResource("5_p7u1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139852, 1.92757, 3.17644)
+player_path = NodePath("../PlayerRB")
+
+[node name="ScaryBall7" parent="." instance=ExtResource("5_p7u1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22143, 1.92757, 3.17644)
+player_path = NodePath("../PlayerRB")
+
 [node name="CrawlingEnemy" parent="." instance=ExtResource("6_oxxf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72494, 3.24338, -24.8905)
 player_path = NodePath("../PlayerRB")
@@ -119,16 +148,4 @@ player_path = NodePath("../PlayerRB")
 
 [node name="CrawlingEnemy3" parent="." instance=ExtResource("6_oxxf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03445, 3.24338, -24.8905)
-player_path = NodePath("../PlayerRB")
-
-[node name="CrawlingEnemy4" parent="." instance=ExtResource("6_oxxf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73752, 2.88242, -19.0689)
-player_path = NodePath("../PlayerRB")
-
-[node name="CrawlingEnemy5" parent="." instance=ExtResource("6_oxxf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.31363, 2.88242, -19.0689)
-player_path = NodePath("../PlayerRB")
-
-[node name="CrawlingEnemy6" parent="." instance=ExtResource("6_oxxf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02186, 2.88242, -19.0689)
 player_path = NodePath("../PlayerRB")

@@ -3,6 +3,9 @@ extends RigidBody3D
 var player = null
 const SPEED = 4.0
 
+
+
+
 @export var player_path : NodePath
 @onready var nav_agent =  $NavigationAgent3D
 
@@ -19,6 +22,12 @@ func generic_direction_stab(rvel):
 	$cone.global_transform.basis = self.transform.looking_at(p2).basis
 	$cone.global_transform = $cone.global_transform.rotated_local(rvel.basis.y,90)
 	
+
+
+var stunned = false
+func stun():
+	stunned = true
+
 
 
 func _ready():

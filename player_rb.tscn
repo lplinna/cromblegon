@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxhdbv2r7npnk"]
+[gd_scene load_steps=6 format=3 uid="uid://dxhdbv2r7npnk"]
 
 [ext_resource type="Script" path="res://assets/scenes/rb_player.gd" id="1_2lnpy"]
+[ext_resource type="PackedScene" uid="uid://cd4mntl208ue6" path="res://assets/scenes/teapotweapon.tscn" id="2_saanp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sd3fd"]
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v3tgb"]
 
@@ -18,6 +22,19 @@ script = ExtResource("1_2lnpy")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67893, 0)
+
+[node name="PhysicsRaycast" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 15
+
+[node name="InteractPosition" type="Marker3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.29718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/InteractPosition"]
+mesh = SubResource("BoxMesh_sd3fd")
+
+[node name="teapotweapon" parent="Camera3D" instance=ExtResource("2_saanp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.217778, -0.120879, -0.346335)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_v3tgb")
