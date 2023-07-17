@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://beg7ylx2bijut"]
+[gd_scene load_steps=12 format=3 uid="uid://beg7ylx2bijut"]
 
 [ext_resource type="Material" uid="uid://1t0boix205ce" path="res://assets/materials/generic_greenblock.tres" id="1_8bkqu"]
 [ext_resource type="Material" uid="uid://ir5o1w7c33ih" path="res://assets/materials/test1.tres" id="2_q87xq"]
 [ext_resource type="PackedScene" uid="uid://l7km8qs58j87" path="res://assets/scenes/physdoor.tscn" id="3_a2tyk"]
 [ext_resource type="PackedScene" uid="uid://dxhdbv2r7npnk" path="res://player_rb.tscn" id="4_nb244"]
+[ext_resource type="PackedScene" uid="uid://c42mpl26xh2du" path="res://assets/scenes/PipePickup.tscn" id="6_2llc3"]
 [ext_resource type="PackedScene" uid="uid://b1ggjfc1kooop" path="res://assets/scenes/crawling_enemy.tscn" id="6_oxxf6"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ta38s"]
@@ -132,3 +133,6 @@ player_path = NodePath("../PlayerRB")
 [node name="CrawlingEnemy6" parent="." instance=ExtResource("6_oxxf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02186, 2.88242, -19.0689)
 player_path = NodePath("../PlayerRB")
+
+[node name="PipePickup" parent="." instance=ExtResource("6_2llc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17992, 1.63052, -14.4321)

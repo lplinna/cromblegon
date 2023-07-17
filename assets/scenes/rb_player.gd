@@ -66,7 +66,7 @@ func _integrate_forces(state):
 		PUNCH()
 		$Camera3D/teapotweapon.reload()
 	
-	print(on_floor)
+	#print(on_floor)
 	
 
 
@@ -113,3 +113,7 @@ func _input(event):
 		$Camera3D.position = $CamRoot.position
 		#$SpotLight3D.transform = $Camera3D.transform
 		#hold_style_3(self,$MeshInstance3D2)
+
+
+func _on_pickup_area_body_entered(body):
+	pass # Replace with function body.
