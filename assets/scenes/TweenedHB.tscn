@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjakxqekxhsx1"]
+[gd_scene load_steps=6 format=3 uid="uid://cjakxqekxhsx1"]
 
-[ext_resource type="Script" path="res://assets/scenes/TweenedHB.gd" id="1_7fpb3"]
+[ext_resource type="Script" path="res://assets/scenes/TweenedHB2.gd" id="1_f5af1"]
 [ext_resource type="Texture2D" uid="uid://lxmchhsdce8o" path="res://icon.svg" id="2_rv7oi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_413k1"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1twah"]
+bg_color = Color(1, 1, 0, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hntc"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
 
 [node name="TweenedHB" type="Control"]
 layout_mode = 3
@@ -10,26 +27,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7fpb3")
+script = ExtResource("1_f5af1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_right = 731.0
 offset_bottom = 107.0
 texture = ExtResource("2_rv7oi")
+draw_center = false
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
-patch_margin_bottom = 19
+patch_margin_bottom = 10
 
-[node name="Rect1" type="ColorRect" parent="."]
+[node name="Rect1" type="Panel" parent="."]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(1, 0, 0.0156863, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_413k1")
 
-[node name="Rect2" type="ColorRect" parent="."]
+[node name="Rect2" type="Panel" parent="."]
+clip_contents = true
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(1, 0.996078, 0.239216, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1twah")
+
+[node name="InsidePart" type="Panel" parent="Rect2"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_right = 6.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0hntc")
