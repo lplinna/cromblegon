@@ -5,13 +5,12 @@ extends Node3D
 func _ready():
 	pass # Replace with function body.
 
+func reload():
+	var t = $shtumbusteapot/AnimationTree
+	t.active = true
+	t["parameters/TimeSeek/seek_request"] = 0.0
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotation.y += 5*delta;
 	pass
-
-
-func get_pickedup(player):
-	var t = get_tree().create_tween();
-	t.tween_property(self,"global_position",player.global_position,1)

@@ -14,5 +14,5 @@ func _process(delta):
 func PollArea(body):
 	if "pickups" in body.get_groups():
 		print("Pickup found")
-		body.get_parent().get_pickedup()
+		body.get_parent().get_pickedup(self)
 	pass

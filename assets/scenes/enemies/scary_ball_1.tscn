@@ -11,7 +11,7 @@ points = PackedVector3Array(0.457871, 0.198079, 0.0157824, -0.48874, -0.0916874,
 top_radius = 0.0
 bottom_radius = 0.08
 
-[node name="ScaryBall1" type="RigidBody3D" groups=["Enemy"]]
+[node name="ScaryBall1" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.755504, 1.32259, 2.31738)
 script = ExtResource("1_d0xw7")
 player_path = NodePath("../Player")

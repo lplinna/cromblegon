@@ -1,17 +1,18 @@
-extends Node3D
+extends Area3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	connect("body_entered",PollArea)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	rotation.y += 5*delta;
 	pass
 
-
-func get_pickedup(player):
-	var t = get_tree().create_tween();
-	t.tween_property(self,"global_position",player.global_position,1)
+func PollArea(body):
+	if "pickups" in body.get_groups():
+		print("Pickup found")
+		body.get_parent().get_pickedup()
+	pass

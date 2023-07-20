@@ -14,4 +14,4 @@ func _process(delta):
 
 func get_pickedup(player):
 	var t = get_tree().create_tween();
-	t.tween_property(self,"global_position",player.global_position,1)
+	t.tween_property(self,"position",player.location,1)
