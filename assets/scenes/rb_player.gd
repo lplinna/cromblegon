@@ -65,6 +65,7 @@ func _integrate_forces(state):
 	if Input.is_action_just_pressed("Interact"):
 		PUNCH()
 		$Camera3D/teapotweapon.reload()
+		$Camera3D/PipeWeapon.use()
 	
 	#print(on_floor)
 	
@@ -78,10 +79,11 @@ func PUNCH():
 		var collider = $Camera3D/PhysicsRaycast.get_collider()
 		var n2 = $Camera3D/PhysicsRaycast.global_transform.basis.z.project(gravdir)
 		var n1 = $Camera3D/PhysicsRaycast.global_transform.basis.z - n2
+		if "Enemy" in collider.get_groups():
+			collider.stun()
 		if not collider is StaticBody3D:
 			collider.apply_central_impulse(n1 * -25)
 			#collider.apply_central_impulse(Vector3.UP * 6)
-			collider.stun()
 		
 
 

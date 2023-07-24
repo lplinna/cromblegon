@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxhdbv2r7npnk"]
+[gd_scene load_steps=8 format=3 uid="uid://dxhdbv2r7npnk"]
 
 [ext_resource type="Script" path="res://assets/scripts/rb_player.gd" id="1_2lnpy"]
-[ext_resource type="PackedScene" uid="uid://b5xwbepyh35tw" path="res://assets/scenes/misc/PipeWeapon.tscn" id="2_7nf60"]
-[ext_resource type="PackedScene" uid="uid://cd4mntl208ue6" path="res://assets/scenes/teapotweapon.tscn" id="2_saanp"]
 [ext_resource type="Script" path="res://PlayerPickupBehavor.gd" id="3_2gyfd"]
+[ext_resource type="PackedScene" uid="uid://np7hfjxuakk0" path="res://assets/scenes/players/inventory.tscn" id="5_difoj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sd3fd"]
 size = Vector3(0.1, 0.1, 0.1)
@@ -38,12 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.29718)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/InteractPosition"]
 mesh = SubResource("BoxMesh_sd3fd")
 
-[node name="PipeWeapon" parent="Camera3D" instance=ExtResource("2_7nf60")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.29175)
-
-[node name="teapotweapon" parent="Camera3D" instance=ExtResource("2_saanp")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.217778, -0.120879, -0.346335)
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_v3tgb")
 
@@ -64,3 +57,5 @@ script = ExtResource("3_2gyfd")
 
 [node name="PickupZone" type="CollisionShape3D" parent="PickupArea"]
 shape = SubResource("CylinderShape3D_4rjq5")
+
+[node name="Inventory" parent="." instance=ExtResource("5_difoj")]

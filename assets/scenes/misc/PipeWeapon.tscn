@@ -15,7 +15,7 @@ points = PackedVector3Array(-0.02, -0.5, 0, -0.019906, -0.5, -0.00196163, -0.019
 script = ExtResource("1_mnowx")
 
 [node name="PipeRoot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.511867, -0.281814, 0.663015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41775, -0.323933, -0.773899)
 
 [node name="CharacterBody3D" type="Area3D" parent="PipeRoot" groups=["pickups"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51615, 0)

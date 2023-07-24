@@ -68,10 +68,12 @@ func _integrate_forces(state):
 		apply_central_impulse(gravdir * 8)
 		jumping = true
 	
-	if Input.is_action_just_pressed("Interact"):
+	if Input.is_action_just_pressed("Interact"): #Replace with better validation system.
 		PUNCH()
-		$Camera3D/teapotweapon.reload()
-		$Camera3D/PipeWeapon.use()
+		if(is_instance_valid($Camera3D/teapotweapon)):
+			$Camera3D/teapotweapon.reload()
+		if(is_instance_valid($Camera3D/PipeWeapon)):
+			$Camera3D/PipeWeapon.use()
 	
 	#print(on_floor)
 	

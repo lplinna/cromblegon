@@ -6,4 +6,7 @@
 [node name="teapotweapon" type="Node3D"]
 script = ExtResource("1_vrdnq")
 
-[node name="shtumbusteapot" parent="." instance=ExtResource("2_jkkdn")]
+[node name="TeapotRoot" type="Node3D" parent="."]
+transform = Transform3D(-1.09716e-07, 0, 2.51, 0, 2.51, 0, -2.51, 0, -1.09716e-07, 0.561945, 0, -0.701258)
+
+[node name="shtumbusteapot" parent="TeapotRoot" instance=ExtResource("2_jkkdn")]

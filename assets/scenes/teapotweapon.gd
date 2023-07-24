@@ -6,7 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 func reload():
-	var t = $shtumbusteapot/AnimationTree
+	var t = $TeapotRoot/shtumbusteapot/AnimationTree
 	t.active = true
 	t["parameters/TimeSeek/seek_request"] = 0.0
 	
