@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://1t0boix205ce" path="res://assets/materials/generic_greenblock.tres" id="1_8bkqu"]
 [ext_resource type="Material" uid="uid://ir5o1w7c33ih" path="res://assets/materials/test1.tres" id="2_q87xq"]
 [ext_resource type="PackedScene" uid="uid://l7km8qs58j87" path="res://assets/scenes/physdoor.tscn" id="3_a2tyk"]
-[ext_resource type="PackedScene" uid="uid://dxhdbv2r7npnk" path="res://assets/scenes/players/player_rb.tscn" id="5_fn3x7"]
+[ext_resource type="PackedScene" uid="uid://dxhdbv2r7npnk" path="res://player_rb.tscn" id="5_fn3x7"]
 [ext_resource type="PackedScene" uid="uid://c42mpl26xh2du" path="res://assets/scenes/PipePickup.tscn" id="6_2llc3"]
 [ext_resource type="PackedScene" uid="uid://b1rh0hurilxub" path="res://assets/scenes/scary_ball_1.tscn" id="6_i4gs7"]
 
