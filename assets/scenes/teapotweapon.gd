@@ -10,6 +10,12 @@ func reload():
 	t.active = true
 	t["parameters/TimeSeek/seek_request"] = 0.0
 	
+func fire():
+	var t = $TeapotRoot/shtumbusteapot
+	var tween = get_tree().create_tween()
+	var o_t = t.transform
+	tween.tween_property(t,"transform",$TeapotRoot/Fire1.transform,0.08);
+	tween.tween_property(t,"transform",o_t,0.08);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

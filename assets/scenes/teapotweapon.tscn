@@ -7,6 +7,9 @@
 script = ExtResource("1_vrdnq")
 
 [node name="TeapotRoot" type="Node3D" parent="."]
-transform = Transform3D(-1.09716e-07, 0, 2.51, 0, 2.51, 0, -2.51, 0, -1.09716e-07, 0.561945, 0, -0.701258)
+transform = Transform3D(-1.09716e-07, 0, 2.51, 0, 2.51, 0, -2.51, 0, -1.09716e-07, 0.555748, -0.0694848, -0.458085)
 
 [node name="shtumbusteapot" parent="TeapotRoot" instance=ExtResource("2_jkkdn")]
+
+[node name="Fire1" type="Marker3D" parent="TeapotRoot"]
+transform = Transform3D(0.904142, -0.427232, -4.1901e-09, 0.427232, 0.904142, 1.8675e-08, -4.19009e-09, -1.8675e-08, 1, -0.121693, 0.0566803, -1.49012e-08)

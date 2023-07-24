@@ -11,11 +11,11 @@ var floorpoint = Vector3()
 
 
 var weapon_usage: Callable
+var weapon_reload: Callable
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	weapon_usage = func(): print("Nothing equipped")
 	pass # Replace with function body.
 
 func know_floor_2():
@@ -71,10 +71,6 @@ func _integrate_forces(state):
 		apply_central_impulse(gravdir * 8)
 		jumping = true
 	
-	if Input.is_action_just_pressed("Interact"): #Replace with better validation system.
-		PUNCH()
-		weapon_usage.call()
-	
 	#print(on_floor)
 	
 
@@ -100,6 +96,15 @@ func PUNCH():
 
 var mouse_sens = 0.003
 func _input(event):
+	
+	if event.is_action_pressed("Interact"): #Replace with better validation system.
+		PUNCH()
+		weapon_usage.call()
+		
+	if event.is_action_pressed("Reload"):
+		weapon_reload.call()
+	
+	
 	if event is InputEventMouseMotion:
 		var g = $Camera3D.transform
 		var k = g.rotated(gravdir.normalized(),-event.relative.x*mouse_sens)
