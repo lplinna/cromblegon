@@ -65,7 +65,7 @@ func _integrate_forces(state):
 	
 	
 	if jumping:
-		apply_central_impulse(gravdir * -1.2/2.06)
+		apply_central_impulse(gravdir * -1.2/1.5)
 	
 	if Input.is_action_just_pressed("movement_jump") and on_floor and not jumping:
 		apply_central_impulse(gravdir * 8)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxhdbv2r7npnk"]
+[gd_scene load_steps=9 format=3 uid="uid://dxhdbv2r7npnk"]
 
 [ext_resource type="Script" path="res://assets/scripts/rb_player.gd" id="1_2lnpy"]
-[ext_resource type="Script" path="res://PlayerPickupBehavor.gd" id="3_2gyfd"]
+[ext_resource type="PackedScene" uid="uid://dys50vjuslk8f" path="res://assets/scenes/misc/PunchWeapon.tscn" id="2_hb1yl"]
+[ext_resource type="Script" path="res://assets/scenes/players/PlayerPickupBehavor.gd" id="3_fd7ip"]
 [ext_resource type="PackedScene" uid="uid://np7hfjxuakk0" path="res://assets/scenes/players/inventory.tscn" id="5_difoj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sd3fd"]
@@ -37,6 +38,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.29718)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D/InteractPosition"]
 mesh = SubResource("BoxMesh_sd3fd")
 
+[node name="PunchWeapon" parent="Camera3D" instance=ExtResource("2_hb1yl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_v3tgb")
 
@@ -53,7 +57,7 @@ target_position = Vector3(0, -0.32, 0)
 [node name="PickupArea" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("3_2gyfd")
+script = ExtResource("3_fd7ip")
 
 [node name="PickupZone" type="CollisionShape3D" parent="PickupArea"]
 shape = SubResource("CylinderShape3D_4rjq5")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxhdbv2r7npnk"]
 
 [ext_resource type="Script" path="res://assets/scenes/rb_player.gd" id="1_2lnpy"]
-[ext_resource type="PackedScene" uid="uid://cd4mntl208ue6" path="res://assets/scenes/teapotweapon.tscn" id="2_saanp"]
+[ext_resource type="PackedScene" uid="uid://cd4mntl208ue6" path="res://assets/scenes/misc/teapotweapon.tscn" id="2_saanp"]
 [ext_resource type="Script" path="res://PlayerPickupBehavor.gd" id="3_2gyfd"]
 [ext_resource type="PackedScene" uid="uid://b5xwbepyh35tw" path="res://assets/scenes/misc/PipeWeapon.tscn" id="3_owevy"]
 

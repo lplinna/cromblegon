@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dys50vjuslk8f"]
+
+[ext_resource type="Script" path="res://assets/scenes/misc/PunchWeapon.gd" id="1_qc0wg"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_6c72x"]
+size = Vector3(0.53, 0.285, 0.27)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1fbm0"]
+data = PackedVector3Array(0, 0.1425, 0.135, 0.265, -0.1425, 0.135, -0.265, -0.1425, 0.135, 0, 0.1425, -0.135, -0.265, -0.1425, -0.135, 0.265, -0.1425, -0.135, 0, 0.1425, 0.135, 0, 0.1425, -0.135, 0.265, -0.1425, 0.135, 0, 0.1425, -0.135, 0.265, -0.1425, -0.135, 0.265, -0.1425, 0.135, 0, 0.1425, -0.135, 0, 0.1425, 0.135, -0.265, -0.1425, -0.135, 0, 0.1425, 0.135, -0.265, -0.1425, 0.135, -0.265, -0.1425, -0.135, -0.265, -0.1425, 0.135, 0.265, -0.1425, 0.135, -0.265, -0.1425, -0.135, 0.265, -0.1425, 0.135, 0.265, -0.1425, -0.135, -0.265, -0.1425, -0.135)
+
+[node name="PunchWeapon" type="Node3D"]
+script = ExtResource("1_qc0wg")
+
+[node name="PunchRoot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41775, -0.323933, -0.773899)
+
+[node name="CharacterBody3D" type="Area3D" parent="PunchRoot" groups=["pickups"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124064, 0.212859, 0.33659)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PunchRoot/CharacterBody3D"]
+mesh = SubResource("PrismMesh_6c72x")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PunchRoot/CharacterBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1fbm0")
+
+[node name="PunchEnd" type="Marker3D" parent="PunchRoot"]
+transform = Transform3D(1, 0, 0, 0, 0.817517, 0.575904, 0, -0.575904, 0.817517, 1.01177, 0.202609, 0.811877)
+
+[node name="PunchStart" type="Marker3D" parent="PunchRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124064, 0.0626398, 0.33659)
+
+[connection signal="body_entered" from="PunchRoot/CharacterBody3D" to="." method="_on_character_body_3d_body_entered"]

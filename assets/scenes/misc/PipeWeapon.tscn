@@ -17,17 +17,28 @@ script = ExtResource("1_mnowx")
 [node name="PipeRoot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41775, -0.323933, -0.773899)
 
-[node name="CharacterBody3D" type="Area3D" parent="PipeRoot" groups=["pickups"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51615, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PipeRoot/CharacterBody3D"]
-mesh = SubResource("CylinderMesh_smw5c")
-skeleton = NodePath("../../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PipeRoot/CharacterBody3D"]
-shape = SubResource("ConvexPolygonShape3D_gt6jt")
-
 [node name="CLANG" type="AudioStreamPlayer3D" parent="PipeRoot"]
 stream = ExtResource("2_r6cae")
 
-[connection signal="body_entered" from="PipeRoot/CharacterBody3D" to="." method="_on_character_body_3d_body_entered"]
+[node name="origin" type="Marker3D" parent="PipeRoot"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="pullback" type="Marker3D" parent="PipeRoot"]
+transform = Transform3D(0.910178, 0.381382, -0.161628, -0.414217, 0.838028, -0.355152, 0, 0.390201, 0.92073, 0, 0.0530299, 0.1337)
+
+[node name="swing" type="Marker3D" parent="PipeRoot"]
+transform = Transform3D(0.853769, 0.130361, -0.504068, 0.520652, -0.213767, 0.826574, 0, -0.968148, -0.25038, 0, -0.0598877, -0.14755)
+
+[node name="PipeRoot2" type="Node3D" parent="PipeRoot"]
+
+[node name="CharacterBody3D" type="Area3D" parent="PipeRoot/PipeRoot2" groups=["pickups"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51615, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PipeRoot/PipeRoot2/CharacterBody3D"]
+mesh = SubResource("CylinderMesh_smw5c")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PipeRoot/PipeRoot2/CharacterBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gt6jt")
+
+[connection signal="body_entered" from="PipeRoot/PipeRoot2/CharacterBody3D" to="." method="_on_character_body_3d_body_entered"]
