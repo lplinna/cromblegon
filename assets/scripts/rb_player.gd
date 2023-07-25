@@ -99,7 +99,6 @@ func _input(event):
 	
 	if event.is_action_pressed("Interact"): #Replace with better validation system.
 		PUNCH()
-		weapon_usage.call()
 		
 	if event.is_action_pressed("Reload"):
 		weapon_reload.call()

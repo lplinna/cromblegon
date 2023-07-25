@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://1t0boix205ce" path="res://assets/materials/generic_greenblock.tres" id="1_8bkqu"]
 [ext_resource type="Material" uid="uid://ir5o1w7c33ih" path="res://assets/materials/test1.tres" id="2_q87xq"]
 [ext_resource type="PackedScene" uid="uid://l7km8qs58j87" path="res://assets/scenes/physdoor.tscn" id="3_a2tyk"]
-[ext_resource type="PackedScene" uid="uid://dxhdbv2r7npnk" path="res://player_rb.tscn" id="5_fn3x7"]
+[ext_resource type="PackedScene" uid="uid://dxhdbv2r7npnk" path="res://player_rb.tscn" id="6_0onst"]
 [ext_resource type="PackedScene" uid="uid://c42mpl26xh2du" path="res://assets/scenes/PipePickup.tscn" id="6_2llc3"]
 [ext_resource type="PackedScene" uid="uid://b1rh0hurilxub" path="res://assets/scenes/scary_ball_1.tscn" id="6_i4gs7"]
 
@@ -110,9 +110,9 @@ shape = SubResource("ConvexPolygonShape3D_8l7a7")
 [node name="PipePickup" parent="." instance=ExtResource("6_2llc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17992, 1.63052, -14.4321)
 
-[node name="PlayerRB" parent="." instance=ExtResource("5_fn3x7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.766536, 2.05328, -12.111)
-
 [node name="ScaryBall1" parent="." instance=ExtResource("6_i4gs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.595, 2.19549, -19.756)
 player_path = NodePath("../PlayerRB")
+
+[node name="PlayerRB" parent="." instance=ExtResource("6_0onst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.47201, 2.53144, 1.8859)

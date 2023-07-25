@@ -22,6 +22,12 @@ func recoil():
 	swingtween.tween_property($PipeRoot,"rotation:x",0,0.2)
 	await swingtween.finished
 	swinging = false
+	
+	
+	
+func _input(event):
+	if event.is_action_pressed("Interact"):
+		use()
 
 
 func _on_character_body_3d_body_entered(body):

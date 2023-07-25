@@ -17,6 +17,14 @@ func fire():
 	tween.tween_property(t,"transform",$TeapotRoot/Fire1.transform,0.08);
 	tween.tween_property(t,"transform",o_t,0.08);
 
+
+func _input(event):
+	if event.is_action_pressed("Interact"):
+		fire()
+	if event.is_action_pressed("Reload"):
+		reload()
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
