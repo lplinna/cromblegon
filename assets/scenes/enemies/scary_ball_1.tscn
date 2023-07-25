@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1rh0hurilxub"]
 
-[ext_resource type="Script" path="res://assets/scripts/RollingEnemy.gd" id="1_d0xw7"]
+[ext_resource type="Script" path="res://assets/scenes/enemies/RollingEnemy.gd" id="1_d0xw7"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_c803k"]
 

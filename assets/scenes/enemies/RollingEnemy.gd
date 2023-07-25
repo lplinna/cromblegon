@@ -2,7 +2,7 @@ extends RigidBody3D
 
 var player = null
 const SPEED = 4.0
-
+var rolling_direction = self.transform
 
 
 
@@ -34,15 +34,18 @@ func _ready():
 	player = get_node(player_path)
 
 
-func _process(_delta):
+func _physics_process(delta):
+	self.apply_torque_impulse(rolling_direction.basis.x * -0.1)
+	check_veering(rolling_direction)
+
+
+func _process(delta):
 	if not player:
 		pass
 	nav_agent.set_target_position(player.global_transform.origin)
 	var next_nav_point = nav_agent.get_next_path_position()
-	var rvel = global_transform.looking_at(next_nav_point,Vector3(0,1,0))
-
-	self.apply_torque_impulse(rvel.basis.x * -0.02)
+	rolling_direction = global_transform.looking_at(next_nav_point,Vector3(0,1,0))
+	
 	if  Time.get_ticks_msec() % 300 < 80 :
-		generic_direction_stab(rvel)
-	check_veering(rvel)
+		generic_direction_stab(rolling_direction)
 	#self.apply_torque(rvel*2)
